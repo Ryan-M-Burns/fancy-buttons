@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const CounterButton = () => {
   
-  const [clickAmount, setClickAmount] = useState();
+  const [clickAmount, setClickAmount] = useState(0);
   
   return (
   
