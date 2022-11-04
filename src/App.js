@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 import AngryButton from './components/AngryButton';
 import CounterButton from './components/CounterButton';
@@ -5,17 +6,29 @@ import LightSwitchButton from './components/LightSwitchButton';
 import TextRepeaterButton from './components/TextRepeaterButton';
 
 const App = () => {
+
+  const [light, setLight] = useState('off');
+  const switchLight = () => setLight(light === 'on' ? 'off' : 'on');
+  const dark = (light === 'off') ? 'dark' : '';
+
   return (
-    <div className={`App`}>
+
+    <div className={`App ${dark}`}>
       <h1>Fancy Buttons!</h1>
+
       <section>
+
         <AngryButton />
         <CounterButton />
-        <LightSwitchButton />
+        <LightSwitchButton switchLight={switchLight} light={light} />
         <TextRepeaterButton />
+
       </section>
+
     </div>
+
   );
+
 };
 
 export default App;

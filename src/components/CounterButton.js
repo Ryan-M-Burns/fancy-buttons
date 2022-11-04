@@ -17,5 +17,3 @@ const CounterButton = (props) => {
 };
 
 export default CounterButton;
-
-
